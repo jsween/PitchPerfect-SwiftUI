@@ -14,9 +14,9 @@ struct PlayBackScreen: View {
     
     var body: some View {
         VStack {
-            ButtonRowView(audioPlayer: audioPlayer, leftEffect: SoundEffect.soundEffects[0], rightEffect: SoundEffect.soundEffects[1])
-            ButtonRowView(audioPlayer: audioPlayer, leftEffect: SoundEffect.soundEffects[2], rightEffect: SoundEffect.soundEffects[3])
-            ButtonRowView(audioPlayer: audioPlayer, leftEffect: SoundEffect.soundEffects[4], rightEffect: SoundEffect.soundEffects[5])
+            ButtonRowView(audioPlayer: audioPlayer, leftEffect: SoundEffect.slow, rightEffect: SoundEffect.fast)
+            ButtonRowView(audioPlayer: audioPlayer, leftEffect: SoundEffect.highPitch, rightEffect: SoundEffect.lowPitch)
+            ButtonRowView(audioPlayer: audioPlayer, leftEffect: SoundEffect.echo, rightEffect: SoundEffect.reverb)
             Button {
                 audioPlayer.stopPlayback()
             } label: {

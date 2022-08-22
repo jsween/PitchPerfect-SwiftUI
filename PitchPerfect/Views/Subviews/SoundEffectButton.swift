@@ -24,7 +24,7 @@ struct SoundEffectButton: View {
 
 struct SoundEffectButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        SoundEffectButton(audioPlayer: AudioViewModel(), soundEffect: SoundEffect.soundEffects[0])
+        SoundEffectButton(audioPlayer: AudioViewModel(), soundEffect: SoundEffect.slow)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -8,6 +8,10 @@
 import Foundation
 
 struct K {
+    
+    static let fileName = "audioFile.m4a"
+    
+    // Alert Messages
     struct Alerts {
         static let DismissAlert = "Dismiss"
         static let RecordingDisabledTitle = "Recording Disabled"
@@ -19,5 +23,6 @@ struct K {
         static let AudioRecordingError = "Audio Recording Error"
         static let AudioFileError = "Audio File Error"
         static let AudioEngineError = "Audio Engine Error"
+        static let RecodingStartError = "Could not start recording"
     }
 }

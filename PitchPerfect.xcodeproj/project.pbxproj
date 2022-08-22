@@ -71,6 +71,7 @@
 			children = (
 				B716ECC128AFCC82009BB3AB /* PitchPerfectApp.swift */,
 				B716ECD328B03B8B009BB3AB /* Models */,
+				B716ECEB28B330C0009BB3AB /* ViewModels */,
 				B716ECD428B04216009BB3AB /* Views */,
 				B716ECE628B2FD1C009BB3AB /* Styles */,
 				B716ECE028B1D1D2009BB3AB /* Utils */,
@@ -91,7 +92,6 @@
 		B716ECD328B03B8B009BB3AB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B716ECD528B051D1009BB3AB /* AudioViewModel.swift */,
 				B716ECD928B1BBFE009BB3AB /* SoundEffect.swift */,
 				B716ECDB28B1BF63009BB3AB /* Enums */,
 			);
@@ -140,6 +140,14 @@
 				B716ECE728B2FD5A009BB3AB /* AudioButton.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		B716ECEB28B330C0009BB3AB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B716ECD528B051D1009BB3AB /* AudioViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

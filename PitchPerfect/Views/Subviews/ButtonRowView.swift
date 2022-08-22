@@ -31,7 +31,7 @@ struct ButtonRowView: View {
 
 struct ButtonRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonRowView(audioPlayer: AudioViewModel(), leftEffect: SoundEffect.soundEffects[0], rightEffect: SoundEffect.soundEffects[1])
+        ButtonRowView(audioPlayer: AudioViewModel(), leftEffect: SoundEffect.slow, rightEffect: SoundEffect.fast)
             .previewLayout(.sizeThatFits)
     }
 }

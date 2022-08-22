@@ -9,6 +9,7 @@ import AVFoundation
 import Combine
 import SwiftUI
 
+// Responsible for Audio-related functionality and updating UI
 class AudioViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     // MARK: - Properties
@@ -32,9 +33,6 @@ class AudioViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             objectWillChange.send(self)
         }
     }
-        
-    var showAlert: Bool = false
-    var errorMessage: String = ""
 }
 
 // MARK: - Play Audio
@@ -43,11 +41,16 @@ extension AudioViewModel {
     
     var recordedAudioURL: URL {
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-        let pathArray = [dirPath, "audioFile.m4a"]
+        let pathArray = [dirPath, K.fileName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
         return filePath!
     }
     
+    /**
+     Starts Playing Audio
+     
+    - Parameter effect: The sound effect used to manipulate audio
+    */
     func startPlayback(effect: SoundEffect) {
         
         // Stop any audio that may be playing
@@ -121,7 +124,6 @@ extension AudioViewModel {
         do {
             try engine.start()
         } catch {
-//            showAlert(Alerts.AudioEngineError, message: String(describing: error))
             print(K.Alerts.AudioEngineError)
             return
         }
@@ -147,6 +149,12 @@ extension AudioViewModel {
         }
     }
     
+    /**
+     Sets the UI when the audio file is done playing
+     
+     - Parameter player: The AVAudioPlayer instnace
+     - Parameter flag: Bool if finished playing successfully
+     */
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             playingState = .notPlaying
@@ -155,6 +163,11 @@ extension AudioViewModel {
     
     // MARK: Connect List of Audio Nodes
     
+    /**
+     Connects audio nodes
+     
+     - Parameter nodes: The audio nodes
+     */
     func connectAudioNodes(_ nodes: AVAudioNode...) {
         for x in 0..<nodes.count-1 {
             engine.connect(nodes[x], to: nodes[x+1], format: audioFile.processingFormat)
@@ -169,13 +182,13 @@ extension AudioViewModel {
     
     // MARK: - Methods
     
-    /***
+    /**
      Start Recording Audio
      */
     func startRecording() {
         let session = AVAudioSession.sharedInstance()
         let documentPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let audioFilename = documentPath.appendingPathComponent("audioFile.m4a")
+        let audioFilename = documentPath.appendingPathComponent(K.fileName)
         recordingState = .recording
         
         
@@ -183,7 +196,7 @@ extension AudioViewModel {
             try session.setCategory(.playAndRecord, mode: .default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
             try session.setActive(true)
         } catch {
-            print("Failed to set up recording session")
+            print(K.Alerts.RecordingFailedMessage)
         }
         
         let settings = [
@@ -199,11 +212,11 @@ extension AudioViewModel {
             
             recordingState = .recording
         } catch {
-            print("Could not start recording")
+            print(K.Alerts.RecodingStartError)
         }
     }
     
-    /***
+    /**
      Stop Recording Audio
      */
     func stopRecording() {
