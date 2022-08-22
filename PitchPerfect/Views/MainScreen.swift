@@ -22,9 +22,9 @@ struct MainScreen: View {
                     audioRecorder.startRecording()
                 } label: {
                     Image("Record")
-                        .opacity(audioRecorder.recordingState == .notRecording ? 1.0 : 0.5)
-                }.disabled(audioRecorder.recordingState == .recording)
-                Text(audioRecorder.recordingState == .recording ? "Tap to Record" : "Recording")
+                }
+                .buttonStyle(AudioButton(isEnabled: audioRecorder.recordingState == .notRecording))
+                Text(audioRecorder.recordingState == .notRecording ? "Tap to Record" : "Recording")
                     .padding()
                 Button {
                     audioRecorder.stopRecording()
@@ -33,8 +33,8 @@ struct MainScreen: View {
                     Image("Stop")
                         .resizable()
                         .frame(width: 64, height: 64)
-                        .opacity(audioRecorder.recordingState == .recording ? 1.0 : 0.5)
-                }.disabled(audioRecorder.recordingState == .notRecording)
+                }
+                .buttonStyle(AudioButton(isEnabled: audioRecorder.recordingState == .recording))
             }
         }//: VStack
         .onAppear {

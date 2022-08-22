@@ -13,25 +13,17 @@ struct ButtonRowView: View {
     var leftEffect: SoundEffect
     var rightEffect: SoundEffect
     
+    private var isPlaying: Bool {
+        return audioPlayer.playingState == .playing
+    }
+    
     var body: some View {
         HStack {
             Spacer()
-            Button {
-                audioPlayer.startPlayback(effect: leftEffect)
-            } label: {
-                Image(leftEffect.name)
-            }
-            .disabled(audioPlayer.playingState == .playing)
-            .opacity(audioPlayer.playingState == .playing ? 0.5 : 1)
+            SoundEffectButton(audioPlayer: audioPlayer, soundEffect: leftEffect)
             Spacer()
             Spacer()
-            Button {
-                audioPlayer.startPlayback(effect: rightEffect)
-            } label: {
-                Image(rightEffect.name)
-            }
-            .disabled(audioPlayer.playingState == .playing)
-            .opacity(audioPlayer.playingState == .playing ? 0.5 : 1)
+            SoundEffectButton(audioPlayer: audioPlayer, soundEffect: rightEffect)
             Spacer()
         }
     }

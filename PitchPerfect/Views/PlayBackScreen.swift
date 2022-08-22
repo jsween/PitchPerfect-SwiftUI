@@ -25,8 +25,7 @@ struct PlayBackScreen: View {
                     .frame(width: 64, height: 64)
                     .padding(.top)
             }
-            .disabled(audioPlayer.playingState == .notPlaying)
-            .opacity(audioPlayer.playingState == .notPlaying ? 0.5 : 1)
+            .buttonStyle(AudioButton(isEnabled: audioPlayer.playingState == .playing))
             .onDisappear {
                 audioPlayer.stopPlayback()
             }

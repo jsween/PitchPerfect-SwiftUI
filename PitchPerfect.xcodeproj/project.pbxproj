@@ -18,6 +18,8 @@
 		B716ECDF28B1BF9F009BB3AB /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716ECDE28B1BF9F009BB3AB /* PlayingState.swift */; };
 		B716ECE228B1D1DE009BB3AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716ECE128B1D1DE009BB3AB /* Constants.swift */; };
 		B716ECE528B2D3AD009BB3AB /* ButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716ECE428B2D3AD009BB3AB /* ButtonRowView.swift */; };
+		B716ECE828B2FD5A009BB3AB /* AudioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716ECE728B2FD5A009BB3AB /* AudioButton.swift */; };
+		B716ECEA28B30526009BB3AB /* SoundEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B716ECE928B30526009BB3AB /* SoundEffectButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		B716ECDE28B1BF9F009BB3AB /* PlayingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
 		B716ECE128B1D1DE009BB3AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B716ECE428B2D3AD009BB3AB /* ButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRowView.swift; sourceTree = "<group>"; };
+		B716ECE728B2FD5A009BB3AB /* AudioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioButton.swift; sourceTree = "<group>"; };
+		B716ECE928B30526009BB3AB /* SoundEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,7 @@
 				B716ECC128AFCC82009BB3AB /* PitchPerfectApp.swift */,
 				B716ECD328B03B8B009BB3AB /* Models */,
 				B716ECD428B04216009BB3AB /* Views */,
-				B716ECE328B2D381009BB3AB /* Subviews */,
+				B716ECE628B2FD1C009BB3AB /* Styles */,
 				B716ECE028B1D1D2009BB3AB /* Utils */,
 				B716ECC528AFCC84009BB3AB /* Assets.xcassets */,
 				B716ECC728AFCC84009BB3AB /* Preview Content */,
@@ -99,6 +103,7 @@
 			children = (
 				B716ECC328AFCC82009BB3AB /* MainScreen.swift */,
 				B716ECCF28AFD712009BB3AB /* PlayBackScreen.swift */,
+				B716ECE328B2D381009BB3AB /* Subviews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,8 +129,17 @@
 			isa = PBXGroup;
 			children = (
 				B716ECE428B2D3AD009BB3AB /* ButtonRowView.swift */,
+				B716ECE928B30526009BB3AB /* SoundEffectButton.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		B716ECE628B2FD1C009BB3AB /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				B716ECE728B2FD5A009BB3AB /* AudioButton.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +213,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B716ECD028AFD713009BB3AB /* PlayBackScreen.swift in Sources */,
+				B716ECE828B2FD5A009BB3AB /* AudioButton.swift in Sources */,
 				B716ECDF28B1BF9F009BB3AB /* PlayingState.swift in Sources */,
 				B716ECDA28B1BBFE009BB3AB /* SoundEffect.swift in Sources */,
+				B716ECEA28B30526009BB3AB /* SoundEffectButton.swift in Sources */,
 				B716ECD628B051D1009BB3AB /* AudioViewModel.swift in Sources */,
 				B716ECC428AFCC82009BB3AB /* MainScreen.swift in Sources */,
 				B716ECE528B2D3AD009BB3AB /* ButtonRowView.swift in Sources */,
