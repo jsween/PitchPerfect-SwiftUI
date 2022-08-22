@@ -124,7 +124,7 @@ extension AudioViewModel {
         do {
             try engine.start()
         } catch {
-            print(K.Alerts.AudioEngineError)
+            print(K.Errors.AudioEngineError)
             return
         }
         
@@ -196,7 +196,7 @@ extension AudioViewModel {
             try session.setCategory(.playAndRecord, mode: .default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
             try session.setActive(true)
         } catch {
-            print(K.Alerts.RecordingFailedMessage)
+            print(K.Errors.RecordingFailedMessage)
         }
         
         let settings = [
@@ -212,7 +212,7 @@ extension AudioViewModel {
             
             recordingState = .recording
         } catch {
-            print(K.Alerts.RecodingStartError)
+            print(K.Errors.RecodingStartError)
         }
     }
     
